@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://nereajimenezgrueira.github.io/miblog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://nereajimenezgrueira.github.io/miblog/" rel="alternate" type="text/html" hreflang="es" /><updated>2026-11-17T11:52:42+01:00</updated><id>https://nereajimenezgrueira.github.io/miblog/feed.xml</id><title type="html">Apuntes de IAW</title><subtitle>Blog de prácticas del módulo Implantación de Aplicaciones Web: servidores web, contenedores y despliegue.</subtitle><author><name>Nerea Jimenez</name></author><entry><title type="html">Mi primer contenedor Docker</title><link href="https://nereajimenezgrueira.github.io/miblog/contenedores/2026/11/17/mi-primer-contenedor-docker.html" rel="alternate" type="text/html" title="Mi primer contenedor Docker" /><published>2026-11-17T10:49:00+01:00</published><updated>2026-11-17T10:49:00+01:00</updated><id>https://nereajimenezgrueira.github.io/miblog/contenedores/2026/11/17/mi-primer-contenedor-docker</id><content type="html" xml:base="https://nereajimenezgrueira.github.io/miblog/contenedores/2026/11/17/mi-primer-contenedor-docker.html"><![CDATA[<p>Levantamos un servidor Nginx dentro de un contenedor en un solo comando.</p>
+
+<h2 id="arrancar-el-contenedor">Arrancar el contenedor</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash
+docker run -d --name web -p 8080:80 nginx
+curl -I http://localhost:8080
+</code></pre></div></div>]]></content><author><name>Nerea Jimenez</name></author><category term="contenedores" /><category term="docker" /><category term="nginx" /><summary type="html"><![CDATA[Levantamos un servidor Nginx dentro de un contenedor en un solo comando.]]></summary></entry><entry><title type="html">Instalar Apache en Ubuntu Server</title><link href="https://nereajimenezgrueira.github.io/miblog/servidores/2026/11/17/instalar-apache-en-ubuntu.html" rel="alternate" type="text/html" title="Instalar Apache en Ubuntu Server" /><published>2026-11-17T10:40:00+01:00</published><updated>2026-11-17T10:40:00+01:00</updated><id>https://nereajimenezgrueira.github.io/miblog/servidores/2026/11/17/instalar-apache-en-ubuntu</id><content type="html" xml:base="https://nereajimenezgrueira.github.io/miblog/servidores/2026/11/17/instalar-apache-en-ubuntu.html"><![CDATA[<p>En esta práctica instalamos el servidor web Apache y comprobamos que responde en el puerto 80.</p>
+
+<h2 id="instalación">Instalación</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash
+sudo apt update
+sudo apt install apache2
+sudo systemctl enable --now apache2
+</code></pre></div></div>
+
+<h2 id="comprobación">Comprobación</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash
+systemctl status apache2
+curl -i http://localhost
+</code></pre></div></div>
+<p>Si todo va bien, el navegador mostrará la página <em>It works!</em></p>]]></content><author><name>Nerea Jimenez</name></author><category term="servidores" /><category term="apache" /><category term="ubuntu" /><category term="http" /><summary type="html"><![CDATA[En esta práctica instalamos el servidor web Apache y comprobamos que responde en el puerto 80.]]></summary></entry><entry><title type="html">Apache frente a Nginx</title><link href="https://nereajimenezgrueira.github.io/miblog/servidores/2026/11/17/apache-frente-a-nginx.html" rel="alternate" type="text/html" title="Apache frente a Nginx" /><published>2026-11-17T09:44:00+01:00</published><updated>2026-11-17T09:44:00+01:00</updated><id>https://nereajimenezgrueira.github.io/miblog/servidores/2026/11/17/apache-frente-a-nginx</id><content type="html" xml:base="https://nereajimenezgrueira.github.io/miblog/servidores/2026/11/17/apache-frente-a-nginx.html"><![CDATA[<p>Comparamos los dos servidores web más usados en Linux.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Característica</th>
+      <th>Apache</th>
+      <th>Nginx</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Modelo</td>
+      <td>Procesos / hilos (MPM)</td>
+      <td>Eventos, asíncrono</td>
+    </tr>
+    <tr>
+      <td>Configuración</td>
+      <td><code class="language-plaintext highlighter-rouge">.htaccess</code> por carpeta</td>
+      <td>Centralizada</td>
+    </tr>
+    <tr>
+      <td>Contenido estático</td>
+      <td>Bueno</td>
+      <td>Muy eficiente</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Si aún no tienes Apache instalado, sigue el <a href="/miblog/servidores/2026/11/17/instalar-apache-en-ubuntu.html">post anterior</a>.</p>]]></content><author><name>Nerea Jimenez</name></author><category term="servidores" /><category term="apache" /><category term="nginx" /><category term="comparativa" /><summary type="html"><![CDATA[Comparamos los dos servidores web más usados en Linux.]]></summary></entry></feed>
